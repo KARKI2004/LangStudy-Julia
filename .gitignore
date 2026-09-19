@@ -1,0 +1,25 @@
+# Operating-system and editor temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local secrets and temporary output
+.env
+.env.*
+!.env.example
+*.tmp
+*.bak
+*.log
+
+# Julia coverage and local cache data
+*.jl.cov
+*.jl.*.cov
+coverage/
+.julia/
+
+# Do not add the final course archive to the source repository.
+lang.zip

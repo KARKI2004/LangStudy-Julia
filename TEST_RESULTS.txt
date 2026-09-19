@@ -1,0 +1,47 @@
+EXECUTED CHECKS
+Date: 2026-09-19
+Current local runtime: Julia 1.13.0 on macOS ARM64
+
+Julia was installed with official Juliaup for this local check. No external
+Julia packages, project environment, or network access were used. This is a
+local verification environment, not the intended Ubuntu presentation target.
+
+All 17 scripts ran independently with exit code 0 and no stderr:
+TAI.jl, TArray.jl, TBroadcast.jl, TDispatch.jl, TEnviron.jl, TFile.jl,
+TLoop.jl, TPointer.jl, TScanf.jl, TScope.jl, TSel.jl, TSimple.jl,
+TStrtok.jl, TStructUnion.jl, TSub.jl, TSystem.jl, and TVar.jl.
+
+Executed input and file checks:
+- TScanf normal input: 1, 2.2, 3.3, abcd.
+- TScanf Unicode input: e-acute followed by Z; removing the first character
+  produced Z without an indexing error.
+- TFile supplied input produced the retained expected-output fixture:
+  abcd1332 and efgh5776.
+- TFile isolated edge cases: CRLF input, leading zeros, malformed input,
+  missing input, and empty input. Valid CRLF input abCD0002 produced abCD0100.
+  Malformed and missing input failed before replacing an existing output file;
+  empty input created an empty output file.
+- TAI output was independently recomputed with scalar Python standard-library
+  arithmetic. For inputs 00 and 11, z = -0.5 and sigmoid = 0.3775, class 0.
+  For 01 and 10, z = 0.5 and sigmoid = 0.6225, class 1.
+
+STATIC REVIEW
+All source files and supporting documentation were read. The scripts use
+only built-in Julia functionality. Professor attribution remains where it
+appears in the original adapted examples. The repository contains all named
+assignment examples: TSimple, TVar, TSel, TLoop, and TSub, plus supporting
+demos. TAI is explicitly limited to a hand-set XOR forward pass; it does not
+train, learn, use a package or API, or claim predictive accuracy.
+
+PRIOR REPORTED CHECK
+The folder previously reported successful execution with Julia 1.10.10 on
+Linux x86_64. That report is retained as history only; it was not independently
+re-run in this review.
+
+REMAINING CHECKS
+- Run the final scripts on the team's Ubuntu ARM64 VM and the presentation
+  computer, including TSystem's `ls` command.
+- Make the PowerPoint and Word manual match these final files. The Word manual
+  should include installation/run instructions, references, and source copies.
+- Confirm the professor's exact AI suggestion if it becomes available. No
+  extra AI requirement has been assumed.
