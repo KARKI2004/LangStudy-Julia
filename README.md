@@ -95,7 +95,7 @@ On the actual Ubuntu ARM64 presentation machine, run `julia --version` and
 execute every command in the run list once. Confirm that `TSystem.jl` can run
 `ls`, `TFile.jl` can write its output, and the Word manual and PowerPoint use
 these final source copies. The current local checks and earlier reported Linux
-check are recorded in [TEST_RESULTS.txt](TEST_RESULTS.txt); the Ubuntu ARM64
+check are recorded in [TEST_RESULTS.txt](docs/TEST_RESULTS.txt); the Ubuntu ARM64
 rehearsal remains the final environment check.
 
 ## Topic map
@@ -139,5 +139,6 @@ for questions.
 - [File I/O](https://docs.julialang.org/en/v1/base/io-network/)
 - [Neural-network activation functions](https://developers.google.com/machine-learning/crash-course/neural-networks/activation-functions)
 
-See [REVIEW_AND_PRESENTATION.md](REVIEW_AND_PRESENTATION.md) for detailed
-teaching notes and [TEST_RESULTS.txt](TEST_RESULTS.txt) for executed checks.
+Detailed teaching notes and executed checks are kept in [docs/](docs/):
+[REVIEW_AND_PRESENTATION.md](docs/REVIEW_AND_PRESENTATION.md) and
+[TEST_RESULTS.txt](docs/TEST_RESULTS.txt).

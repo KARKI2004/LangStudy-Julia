@@ -60,7 +60,7 @@ keep the supporting examples from repeating the same lesson.
 
 TArray, TDispatch, TBroadcast, TFile, and TAI extend the professor-derived
 examples with focused Julia topics. Their behavior and sample output are
-checked in `TEST_RESULTS.txt`.
+checked in `TEST_RESULTS.txt` in this folder.
 
 ## Suggested live demonstration: approximately 4-5 minutes
 
