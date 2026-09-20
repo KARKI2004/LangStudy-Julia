@@ -8,18 +8,54 @@ PowerPoint presentation and Word manual.
 
 ## Requirements
 
-Install a current Julia release for the computer used to run the examples,
-then verify it:
+The intended course environment is Ubuntu ARM64. These examples need:
+
+- A current stable Julia release.
+- A terminal and Ubuntu's standard `ls` command for `TSystem.jl`.
+- Permission to read this folder and write `TFileOut.dat` beside `TFile.jl`.
+
+They use only Julia's built-in functionality. There are **no Julia packages to
+install**: do not run `Pkg.add`, `Pkg.instantiate`, or create a `Project.toml`
+for these scripts. They also do not need network access after Julia itself is
+installed.
+
+## Ubuntu ARM64 setup
+
+On the Ubuntu VM or presentation computer, first confirm the operating system
+and CPU architecture. `aarch64` is the normal name for 64-bit ARM on Ubuntu:
 
 ```sh
+uname -s
+uname -m
+```
+
+Install Julia using the [official Julia installation instructions](https://docs.julialang.org/en/v1/manual/installation/).
+When `curl` is available, Julia's official Juliaup installer can be started
+with:
+
+```sh
+curl -fsSL https://install.julialang.org | sh
+```
+
+Open a new terminal after installation, then verify that Julia is on `PATH`:
+
+```sh
+command -v julia
 julia --version
 ```
 
-These scripts use only Julia's built-in functionality. There are **no Julia
-packages to install**, no `Project.toml`, and no network requirement. Run each
-file in a separate Julia process from this directory. The intended course
-environment is Ubuntu; `TSystem.jl` also requires Ubuntu's standard `ls`
-command.
+Obtain this folder by cloning the future GitHub repository or by extracting the
+team's source folder. After replacing the placeholders below with the actual
+repository URL and directory name, change into it:
+
+```sh
+git clone <repository-url>
+cd <repository-directory>
+```
+
+Keep `TFile.jl`, `TFileIn.dat`, and the retained `TFileOut.dat` fixture
+together. Run each file in a separate Julia process; do not paste all scripts
+into one REPL session because several define `main()`.
 
 ## Run
 
@@ -52,6 +88,15 @@ replaces [TFileOut.dat](TFileOut.dat). The committed output file is a retained
 expected-output fixture for the supplied input: `abcd1332` and `efgh5776`.
 It accepts only four ASCII letters followed by four digits; malformed input is
 rejected before the output file is opened.
+
+## Before presenting
+
+On the actual Ubuntu ARM64 presentation machine, run `julia --version` and
+execute every command in the run list once. Confirm that `TSystem.jl` can run
+`ls`, `TFile.jl` can write its output, and the Word manual and PowerPoint use
+these final source copies. The current local checks and earlier reported Linux
+check are recorded in [TEST_RESULTS.txt](TEST_RESULTS.txt); the Ubuntu ARM64
+rehearsal remains the final environment check.
 
 ## Topic map
 
